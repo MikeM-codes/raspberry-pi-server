@@ -3,3 +3,16 @@ body {
   font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
     "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
+
+.api-status {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.api-status.up {
+  color: green
+}
+
+.api-status.down {
+  color: red
+}
