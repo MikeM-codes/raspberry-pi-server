@@ -1,6 +1,6 @@
 const apiStatusEl = document.getElementById("api-status");
 
-const isProd = false;
+const isProd = true;
 const API_URL = isProd
   ? "http://dev.embrycode.com/api"
   : "http://localhost:3000";
