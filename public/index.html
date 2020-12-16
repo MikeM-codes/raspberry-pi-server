@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Petersson Collection</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="css/style.css" />
@@ -9,34 +9,31 @@
 
 <html lang="en">
   <body>
-    <!--    <img src="img/Banner1.jpg" width="100px" alt="Guitar">-->
-
     <h1>The Petersson Collection</h1>
 
-    <!--    <img src="img/Hofner-10.jpg" width="100px"  alt="Guitar">-->
-
-    <h2>API health</h2>
-    <p id="api-status"></p>
-
     <h2>Add a guitar</h2>
-    <form method="post" action="http://dev.embrycode.com/api/guitars">
+    <form method="post">
       <label for="make">Make</label>
-      <input id="make" name="make"/>
+      <input id="make" name="make" />
 
       <label for="model">Model</label>
-      <input id="model" name="model"/>
+      <input id="model" name="model" />
 
       <label for="year">Year</label>
-      <input id="year" name="year"/>
+      <input id="year" name="year" />
 
       <label for="finish">Finish</label>
-      <input id="finish" name="finish"/>
+      <input id="finish" name="finish" />
 
       <label for="image-url">Image URL</label>
-      <input id="image-url" name="imageUrl"/>
+      <input id="image-url" name="imageUrl" />
 
       <button>Submit</button>
     </form>
+
+    <div id="api-status-container">
+      API: <span id="api-status-indicator"></span>
+    </div>
 
     <!-- Scripts -->
     <script src="js/app.js"></script>

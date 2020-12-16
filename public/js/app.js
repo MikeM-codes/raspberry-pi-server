@@ -1,24 +1,42 @@
-const apiStatusEl = document.getElementById("api-status");
+const apiStatusIndicatorEl = document.querySelector('#api-status-indicator')
+const formEl = document.querySelector('form')
 
-const isProd = true;
+const isProd = false
 const API_URL = isProd
-  ? "http://dev.embrycode.com/api"
-  : "http://localhost:3000";
+  ? 'http://dev.embrycode.com/api'
+  : 'http://localhost:3000'
 
 fetch(`${API_URL}/health-check`)
   .then((res) => {
-    const isHealthy = res.status === 200;
+    const isHealthy = res.status === 200
 
-    setApiStatus(isHealthy);
+    setApiStatus(isHealthy)
   })
   .catch((err) => {
-    console.error(err);
+    console.error(err)
 
-    setApiStatus(false);
-  });
+    setApiStatus(false)
+  })
 
 function setApiStatus(isHealthy) {
-  apiStatusEl.innerHTML = isHealthy
-    ? '<span class="api-status up">Up</span>'
-    : '<span class="api-status down">Down</span>';
+ apiStatusIndicatorEl.className = isHealthy ? 'bg-green' : 'bg-red'
+}
+
+formEl.onsubmit = function handleSubmit(e) {
+  e.preventDefault()
+
+  const body = new URLSearchParams(new FormData(e.target))
+
+  fetch(`${API_URL}/guitars`, {
+    method: 'POST',
+    body,
+  })
+    .then((res) => res.json())
+    .then((body) => {
+      alert('Guitar saved')
+    })
+    .catch((err) => {
+      console.error(err)
+      alert('Error saving guitar')
+    })
 }

@@ -1,20 +1,30 @@
 body {
   /* https://gist.github.com/don1138/5761014 */
-  font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco",
-    "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: system, -apple-system, '.SFNSText-Regular', 'San Francisco',
+    'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
 }
 
-.api-status {
-  font-weight: bold;
-  font-size: larger;
+/* API status */
+#api-status-container {
+  font-size: small;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
 }
 
-.api-status.up {
-  color: green
+#api-status-indicator {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
 }
 
-.api-status.down {
-  color: red
+.bg-green {
+  background-color: green;
+}
+
+.bg-red {
+  background-color: red;
 }
 
 /* FORM */
