@@ -1,7 +1,7 @@
 const apiStatusIndicatorEl = document.querySelector('#api-status-indicator')
 const formEl = document.querySelector('form')
 
-const isProd = true
+const isProd = false
 const API_URL = isProd
   ? 'http://dev.embrycode.com/api'
   : 'http://localhost:3000'
