@@ -19,10 +19,10 @@ fetch(`${API_URL}/health-check`)
   })
 
 function setApiStatus(isHealthy) {
- apiStatusIndicatorEl.className = isHealthy ? 'bg-green' : 'bg-red'
+  apiStatusIndicatorEl.className = isHealthy ? 'bg-green' : 'bg-red'
 }
 
-formEl.onsubmit = function handleSubmit(e) {
+formEl.onsubmit = function (e) {
   e.preventDefault()
 
   const body = new URLSearchParams(new FormData(e.target))
