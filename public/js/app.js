@@ -24,8 +24,7 @@ function setApiStatus(isHealthy) {
 
 formEl.onsubmit = function (e) {
   e.preventDefault()
-
-  const body = new URLSearchParams(new FormData(e.target))
+  const body = new FormData(formEl)
 
   fetch(`${API_URL}/guitars`, {
     method: 'POST',
@@ -33,8 +32,8 @@ formEl.onsubmit = function (e) {
   })
     .then(handleErrors)
     .then((res) => res.json())
-    .then((body) => {
-      console.log(body)
+    .then((res) => {
+      console.log(res)
       alert('Guitar saved')
     })
     .catch((err) => {
