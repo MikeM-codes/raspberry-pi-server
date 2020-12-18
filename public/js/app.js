@@ -24,7 +24,8 @@ function setApiStatus(isHealthy) {
 
 formEl.onsubmit = function (e) {
   e.preventDefault()
-  const body = new FormData(formEl)
+
+  const body = new URLSearchParams(new FormData(formEl))
 
   fetch(`${API_URL}/guitars`, {
     method: 'POST',
