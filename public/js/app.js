@@ -32,8 +32,7 @@ formEl.onsubmit = function (e) {
   })
     .then(handleErrors)
     .then((res) => res.json())
-    .then((res) => {
-      console.log(res)
+    .then(() => {
       alert('Guitar saved')
     })
     .catch((err) => {
