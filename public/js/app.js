@@ -3,7 +3,7 @@ const formEl = document.querySelector('form')
 
 const isProd = false
 const API_URL = isProd
-  ? 'http://dev.embrycode.com/api'
+  ? 'http://home.dev.embrycode.com/api'
   : 'http://localhost:3000'
 
 fetch(`${API_URL}/health-check`)

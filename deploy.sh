@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-HOST=pi@67.177.189.251
+HOST=raspi
 
-rsync -azP --delete public/ $HOST:/var/www/dev.embrycode.com
+rsync -azP --delete public/ $HOST:/var/www/petersson
