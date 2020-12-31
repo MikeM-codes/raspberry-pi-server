@@ -1,10 +1,31 @@
 const apiStatusIndicatorEl = document.querySelector('#api-status-indicator')
 const formEl = document.querySelector('form')
 
-const isProd = false
+const isProd = true
 const API_URL = isProd
   ? 'http://home.dev.embrycode.com/api'
   : 'http://localhost:3000'
+
+fetch(`${API_URL}/guitars`, {
+  method: 'GET'
+})
+  .then(handleErrors)
+  .then((res) => {
+    // Convert the response to JSON
+    return res.json()
+  })
+  .then((resConvertedToJSON) => {
+    // Work with the JSON data
+    // Write all guitars onto the page
+    const allGuitarsElement = document.getElementById('all-guitars')
+    console.log(allGuitarsElement.innerText)
+    allGuitarsElement.innerText = JSON.stringify(resConvertedToJSON, null, 2)
+    console.log(allGuitarsElement.innerText)
+  })
+  .catch((err) => {
+    console.error(err)
+    alert('Error getting guitars')
+  })
 
 fetch(`${API_URL}/health-check`)
   .then((res) => {
